@@ -183,6 +183,16 @@ function EditProductModal(props) {
                       <label htmlFor="gallery" className="form-label">Gallery</label>
                       <input type="file" className="form-control" id="gallery" name="gallery" multiple onChange={handleChange} required />
                     </div>
+                    <div className="mb-3 d-flex">
+                    {
+                      formData.gallery.map((image, index) => (
+                        <div key={index}>
+                          <img src={image} alt="product" className="img-fluid" style={{ width: "50px", height: "50px", marginRight: "10px",objectFit: "cover" }} />
+                        </div>
+                      ))
+                    }
+                    </div>
+                     
                     <div className="mb-3">
                       <label htmlFor="category_id" className="form-label">Category</label>
                       <select className="form-select" id="category_id" name="category_id" value={formData.category_id} onChange={handleChange} required>
